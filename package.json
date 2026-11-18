@@ -1,13 +1,13 @@
 {
   "name": "jianzhang",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist -m deploy"
+    "deploy": "vite build && gh-pages -d dist -m deploy"
   },
   "dependencies": {
     "dayjs": "^1.11.23",

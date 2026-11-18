@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import TabBar, { type Tab } from './components/TabBar'
 import TxEditor from './components/TxEditor'
 import AssetsPage from './pages/AssetsPage'
+import FundPage from './pages/FundPage'
 import HomePage from './pages/HomePage'
 import SettingsPage from './pages/SettingsPage'
 import StatsPage from './pages/StatsPage'
@@ -59,7 +60,7 @@ function Shell() {
     return (
       <div className="splash">
         <div className="splash-logo">¥</div>
-        <div className="splash-name">简账</div>
+        <div className="splash-name">记账不是张</div>
       </div>
     )
   }
@@ -89,6 +90,7 @@ function Shell() {
         {tab === 'stats' ? (
           <StatsPage month={month} onMonthChange={setMonth} />
         ) : null}
+        {tab === 'fund' ? <FundPage /> : null}
         {tab === 'assets' ? <AssetsPage /> : null}
         {tab === 'settings' ? <SettingsPage /> : null}
       </main>

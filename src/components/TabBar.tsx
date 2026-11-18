@@ -1,6 +1,6 @@
-import { ChartColumn, House, Plus, Settings, Wallet } from 'lucide-react'
+import { ChartColumn, House, Plus, Settings, Target, Wallet } from 'lucide-react'
 
-export type Tab = 'home' | 'stats' | 'assets' | 'settings'
+export type Tab = 'home' | 'stats' | 'fund' | 'assets' | 'settings'
 
 interface Props {
   tab: Tab
@@ -27,6 +27,13 @@ export default function TabBar({ tab, onChange, onAdd }: Props) {
       </button>
       <button className="tab-add" onClick={onAdd} aria-label="记一笔">
         <Plus size={26} strokeWidth={2.2} />
+      </button>
+      <button
+        className={`tab${tab === 'fund' ? ' active' : ''}`}
+        onClick={() => onChange('fund')}
+      >
+        <Target size={22} strokeWidth={1.9} />
+        <span>基金</span>
       </button>
       <button
         className={`tab${tab === 'assets' ? ' active' : ''}`}

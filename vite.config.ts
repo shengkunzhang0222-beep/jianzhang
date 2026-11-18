@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: '简账',
-        short_name: '简账',
+        name: '记账不是张',
+        short_name: '记账不是张',
         description: '个人日常记账，数据只保存在本机',
         lang: 'zh-CN',
         start_url: './',

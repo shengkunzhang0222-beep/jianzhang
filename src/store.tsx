@@ -8,12 +8,14 @@ import {
   type ReactNode,
 } from 'react'
 import { loadAll, requestPersistence } from './db'
-import type { Account, Category, Tx } from './types'
+import type { Account, Category, FundEntry, FundGoal, Tx } from './types'
 
 interface DataValue {
   accounts: Account[]
   categories: Category[]
   txs: Tx[]
+  fundGoals: FundGoal[]
+  fundEntries: FundEntry[]
   loading: boolean
   error: string | null
   reload: () => Promise<void>
@@ -25,6 +27,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
   const [accounts, setAccounts] = useState<Account[]>([])
   const [categories, setCategories] = useState<Category[]>([])
   const [txs, setTxs] = useState<Tx[]>([])
+  const [fundGoals, setFundGoals] = useState<FundGoal[]>([])
+  const [fundEntries, setFundEntries] = useState<FundEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -33,6 +37,8 @@ export function DataProvider({ children }: { children: ReactNode }) {
     setAccounts(data.accounts)
     setCategories(data.categories)
     setTxs(data.transactions)
+    setFundGoals(data.fundGoals)
+    setFundEntries(data.fundEntries)
     setError(null)
   }, [])
 
@@ -52,8 +58,17 @@ export function DataProvider({ children }: { children: ReactNode }) {
   }, [reload])
 
   const value = useMemo<DataValue>(
-    () => ({ accounts, categories, txs, loading, error, reload }),
-    [accounts, categories, txs, loading, error, reload],
+    () => ({
+      accounts,
+      categories,
+      txs,
+      fundGoals,
+      fundEntries,
+      loading,
+      error,
+      reload,
+    }),
+    [accounts, categories, txs, fundGoals, fundEntries, loading, error, reload],
   )
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>

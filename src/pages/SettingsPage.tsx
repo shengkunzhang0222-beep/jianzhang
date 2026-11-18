@@ -98,7 +98,7 @@ export default function SettingsPage() {
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = `简账备份_${todayStr()}.json`
+      a.download = `记账不是张备份_${todayStr()}.json`
       document.body.appendChild(a)
       a.click()
       a.remove()
@@ -212,7 +212,7 @@ export default function SettingsPage() {
               <li>放到主屏幕、锁屏小组件或背面轻点</li>
             </ol>
             <p className="install-note">
-              提示：也可以复制微信/支付宝的支付结果文字，回到简账点「粘贴识别」
+              提示：也可以复制微信/支付宝的支付结果文字，回到记账不是张点「粘贴识别」
               自动填写。全部解析都在本机完成。
             </p>
           </div>
@@ -288,8 +288,8 @@ export default function SettingsPage() {
               ¥
             </div>
             <div>
-              <div className="about-name">简账</div>
-              <div className="about-version">v0.1.0 · 数据仅保存在本机</div>
+              <div className="about-name">记账不是张</div>
+              <div className="about-version">v0.2.0 · 数据仅保存在本机</div>
             </div>
           </div>
         </div>

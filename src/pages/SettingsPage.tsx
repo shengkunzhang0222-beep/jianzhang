@@ -212,7 +212,7 @@ export default function SettingsPage() {
               <li>放到主屏幕、锁屏小组件或背面轻点</li>
             </ol>
             <p className="install-note">
-              提示：也可以复制微信/支付宝的支付结果文字，回到记账不是张点「粘贴识别」
+              提示：也可以复制微信/支付宝的支付结果文字，回到本应用点「粘贴识别」
               自动填写。全部解析都在本机完成。
             </p>
           </div>
